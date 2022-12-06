@@ -27,3 +27,8 @@ jobs:
         with:
           push: true
           tags: dylanbekers/pe-frontend
+      - name: Sent post request to Portainer Service Webhook
+        uses: jasongitmail/fast-webhook@v1
+        with:
+          url: ${{ secrets.WEBHOOK_URL }}
+          json: '{}'
